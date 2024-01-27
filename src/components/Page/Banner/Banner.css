@@ -1,0 +1,49 @@
+.content{
+    font-size: 45px;
+    font-family: Montserrat,sans-serif;
+    font-weight: 800;
+    color: #fff!important;
+}
+.bg-send {
+   
+    background-position: 20px 25px;
+    background-size: contain;
+    background-repeat: no-repeat;
+   
+}
+w-100 {
+    width: 100%!important;
+    box-sizing: border-box;
+    display: none!important;
+    text-align: center;
+    
+}
+
+
+
+
+
+
+.track-elem {
+    border-radius: 8px;
+    margin-left: auto!important;
+    margin-right: auto!important;
+    width: 75%!important;
+    border: 0!important;
+    box-sizing: border-box;
+    display: block;
+}
+
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0.25rem;
+}
