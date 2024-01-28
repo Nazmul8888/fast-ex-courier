@@ -1,46 +1,39 @@
 import { useState } from "react";
 
+const accordionData = [{title: 'Daily Pick up, No limitations', subtitle: 'Steadfast Courier gives you the opportunity of unlimited pickup. You can give any amount of parcels regardless of their size and weight. ', colorBg: 'bg-amber-500', colorBorder: 'border-amber-500'},
+{title: 'heading', subtitle: 'Hi!~ How are you doing? This is my new', colorBg: 'bg-orange-500', colorBorder: 'border-orange-500'},{title: 'heading', subtitle: 'Hi!~ How are you doing?', colorBg: 'bg-red-500', colorBorder: 'border-red-500'},
+
+{title: 'heading', subtitle: 'Hi!~ How are you doing?', colorBg: 'bg-sky-500', colorBorder: 'border-sky-500'},{title: 'heading', subtitle: 'Hi!~ How are you doing?', colorBg: 'bg-purple-500', colorBorder: 'border-purple-500'}];
 
 const Accordion = () => {
-    const [isOpen, setIsOpen] = useState(null);
-
-    const handleToggle = (idx) => setIsOpen((prevIdx) => (prevIdx === idx ? null : idx));
-
-    const datas = [
-        { title: 'Daily Pick up, No limitations', color: 'green', description: 'To create an account, click on the "Sign Up" button and fill out the required information. Once done, you can enjoy the benefits of being a registered member.'},
-        { title: 'Apps Permissions', color: 'sky', description: 'Our return policy allows you to return items within 30 days of purchase. Please visit our returns page for detailed instructions and to initiate a return.'},
-        { title: 'Pending task', color: 'purple', description: 'Yes, you can change your shipping address before your order is shipped. Go to your account settings and update the shipping information accordingly.'},
-        { title: 'Card expired', color: 'amber', description: 'We appreciate our loyal customers! Stay tuned for exclusive discounts, promotions, and special offers available to members of our loyalty program.'},
-        { title: 'Card expired', color: 'red', description: 'We appreciate our loyal customers! Stay tuned for exclusive discounts, promotions, and special offers available to members of our loyalty program.'}
-    ];
+    const [isActive, setIsActive] = useState(0);
+    const handleToggle = (idx) => {
+        setIsActive((prevIdx) => (prevIdx === idx ? null : idx));
+    };
     return (
-        <div className="max-w-screen-xl mx-auto">
-        <div className="space-y-4 p-2 md:p-6">
-                {datas?.map((data, idx) => (
-                    <div key={idx}>
-                        {/* header / Title */}
-                        <div onClick={() => handleToggle(idx)} className={`px-4 md:px-8 py-6 ${ idx === 0 ? 'bg-green-50 border-green-500' : idx === 1 ? 'bg-sky-50 border-sky-500' : idx === 2 ? 'bg-purple-50 border-purple-500' : idx === 3 ? 'bg-amber-50 border-amber-500' : idx === 4 ? 'bg-red-50 border-red-500' : 'bg-orange-50 border-orange-500'} border-l-[3px] cursor-pointer`}>
-                            <div className="flex items-center">
-                                <span>
-                                    <svg className={`mr-4 ${ idx === 0 ? 'fill-green-900' : idx === 1 ? 'fill-sky-900' : idx === 2 ? 'fill-purple-900' : idx === 3 ? 'fill-amber-900' : idx === 4 ? 'fill-red-900': 'fill-orange-900'} shrink-0`} width="16" height="16" xmlns="http://www.w3.org/2000/svg"><rect y="7" width="16" height="2" rx="1" className={`transform origin-center transition duration-200 ease-out ${isOpen === idx && '!rotate-180'}`} /><rect y="7" width="16" height="2" rx="1" className={`transform origin-center rotate-90 transition duration-200 ease-out ${isOpen === idx && '!rotate-180'}`} /></svg>
-                                </span>
-                                <h4
-                                    className={`${ idx === 0 ? 'text-green-900' : idx === 1 ? 'text-sky-900' : idx === 2 ? 'text-purple-900' : idx === 3 ? 'text-amber-900' : idx === 4 ? 'text-red-900' : 'text-orange-900'} text-xl`}>
-                                    {data.title}
-                                </h4>
-                            </div>
-                        </div>
-                        {/* body / content  */}
-                        <div className={`grid overflow-hidden transition-all duration-300 ease-in-out   ${isOpen === idx ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
-                            <div className="overflow-hidden">
-                                <div className={`pb-6 pr-4 pl-14 md:pl-16 border-l-[3px] text-sm  ${ idx === 0 ? 'text-green-900 bg-green-50 border-green-500' : idx === 1 ? 'text-sky-900 bg-sky-50 border-sky-500' : idx === 2 ? 'text-purple-900 bg-purple-50 border-purple-500' : idx === 3 ? 'text-amber-900 bg-amber-50 border-amber-500' : idx === 4 ? 'text-red-900 bg-red-50 border-red-500' : 'text-orange-900 bg-orange-50 border-orange-500'} `}>
-                                    {data?.description}
-                                </div>
-                            </div>
+        <div className=" ">
+        <div className="w-fit mx-auto min-h-[300px] flex gap-1 ">
+                {accordionData.map((_, idx) => (
+                    <div key={idx} className="flex">
+                        {/* toggle item */}
+                        <button onClick={() => handleToggle(idx)} className={`h-full flex justify-around flex-col items-center w-14 ${_.colorBg} text-white rounded-lg relative`}>
+                            {isActive === idx && <span className={`w-0 h-0 ${_.colorBorder} border-r-[20px] border-b-[20px] border-r-transparent absolute rotate-[225deg] left-10 top-4`}></span>}
+                            <p>{idx + 1}</p>
+                            <p className="rotate-[270deg]"></p>
+                        </button>
+                        {/* container */}
+                        <div
+                            className={`grid place-content-center bg-gray-200 shadow-md rounded-lg ${
+                                isActive === idx ? 'w-56 px-5 opacity-1 scale-1' : 'w-0 opacity-0 scale-0'
+                            } text-black ml-2 duration-300 ease-in-out`}
+                        >
+                            <h2 className="lg:text-2xl font-black">{_.title}</h2>
+                            <p className="text-black/60">{_.subtitle}</p>
                         </div>
                     </div>
                 ))}
             </div>
+            
             </div>
     );
 };

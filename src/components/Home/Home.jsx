@@ -1,5 +1,6 @@
 import Accordion from "../Page/Accordion/Accordion";
 import Banner from "../Page/Banner/Banner";
+import Services from "../Page/Services/Services";
 
 
 const Home = () => {
@@ -7,6 +8,7 @@ const Home = () => {
         <div>
           <Banner></Banner>
           <Accordion></Accordion>
+          <Services></Services>
         </div>
     );
 };

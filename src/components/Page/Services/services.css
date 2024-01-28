@@ -1,0 +1,7 @@
+.sand{
+    background-color: #fff;
+    box-shadow: 0 0 71.44px 4.56px rgba(0,0,0,.12);
+    transform: rotate(45deg);
+    border-radius: 35px;
+    margin-bottom: 0;
+}
