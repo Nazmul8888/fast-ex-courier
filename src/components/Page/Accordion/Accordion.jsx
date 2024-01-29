@@ -1,9 +1,20 @@
 import { useState } from "react";
 
-const accordionData = [{title: 'Daily Pick up, No limitations', subtitle: 'Steadfast Courier gives you the opportunity of unlimited pickup. You can give any amount of parcels regardless of their size and weight. ', colorBg: 'bg-amber-500', colorBorder: 'border-amber-500'},
-{title: 'heading', subtitle: 'Hi!~ How are you doing? This is my new', colorBg: 'bg-orange-500', colorBorder: 'border-orange-500'},{title: 'heading', subtitle: 'Hi!~ How are you doing?', colorBg: 'bg-red-500', colorBorder: 'border-red-500'},
+const accordionData = [
 
-{title: 'heading', subtitle: 'Hi!~ How are you doing?', colorBg: 'bg-sky-500', colorBorder: 'border-sky-500'},{title: 'heading', subtitle: 'Hi!~ How are you doing?', colorBg: 'bg-purple-500', colorBorder: 'border-purple-500'}];
+{title: 'Daily Pick up, No limitations', subtitle: 'Steadfast Courier gives you the opportunity of unlimited pickup. You can give any amount of parcels regardless of their size and weight. ', colorBg: 'bg-amber-500', colorBorder: 'border-amber-500'},
+
+{title: ' Faster Payment Service', subtitle: 'At Steadfast Courier you can request for your payment every six days of the week', colorBg: 'bg-orange-500', colorBorder: 'border-orange-500'},
+
+{title: ' Cash on Delivery', subtitle: 'At Steadfast Courier we will collect the cash on behalf of you. Our trusted delivery man will deliver your parcel to your customer', colorBg: 'bg-red-500', colorBorder: 'border-red-500'},
+
+{title: ' Real-Time Tracking', subtitle: 'Steadfast Courier provides an unique tracking code for your every consignments', colorBg: 'bg-sky-500', colorBorder: 'border-sky-500'},
+
+{title: ' Online Management', subtitle: 'With our simple and easy to use user interface you can get all the information you need in your own user dashboard.', colorBg: 'bg-purple-500', colorBorder: 'border-purple-500'},
+{title: '  Advanced Customer Service', subtitle: 'Our Call Center Executives are always ready 24/7 to help you with your problems', colorBg: 'bg-purple-500', colorBorder: 'border-purple-500'}
+
+
+];
 
 const Accordion = () => {
     const [isActive, setIsActive] = useState(0);
