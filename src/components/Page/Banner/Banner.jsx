@@ -1,19 +1,27 @@
 
 
+import { Link } from 'react-router-dom';
 import './Banner.css'
 
 const Banner = () => {
     return (
         <div>
-        <div className='relative  '>
+            <div className='relative  '>
             <img src="https://www.steadfast.com.bd/icon/bg-wave-img.svg" alt="" />
             <h1 className=' absolute inset-x-0 top-0 h-16 max-w-screen-xl mx-auto content mt-20'><span className=' text-[#FFCC00] '>We Have Fast</span> <br /><span className=' text-[#343a40]'>Delivery To Your</span> <br />Home</h1>
+            <Link to='/register'>
+            <button  className="btn btn-wide bg-red-600 bg feature-content .btn font-16 absolute inset-x-30  ml-80  top-80 h-16 max-w-screen-xl mx-auto content ">Become A Merchant</button>
+            </Link>
+          
             <img className='absolute top-0 right-0 max-w-screen-2xl mx-auto mr-56 mt-20' src="https://i.ibb.co/Gt01ftc/slider-motor-bike.png" alt="" />
 
             <br />
             <br />
+          </div>
+
+          <div className=''>
           
-        </div>
+          </div>
 
             <div className='card track-elem relative  py-16 '>
             <div className=' w-100'>
