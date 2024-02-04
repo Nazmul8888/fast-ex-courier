@@ -1,6 +1,6 @@
 import Accordion from "../Page/Accordion/Accordion";
 import Banner from "../Page/Banner/Banner";
-import CalculateCharge from "../Page/Calculate/CalculateCharge";
+import Calculate from "../Page/Calculate/Calculate";
 import Services from "../Page/Services/Services";
 
 
@@ -10,7 +10,7 @@ const Home = () => {
           <Banner></Banner>
           <Accordion></Accordion>
           <Services></Services>
-          <CalculateCharge></CalculateCharge>
+          <Calculate></Calculate>
         </div>
     );
 };
